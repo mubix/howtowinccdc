@@ -1,1 +1,11 @@
-# How to Win CCDC
+:revealjsdir: revealjs
+:backend: revealjs
+:revealjs_slideNumber: true
+:revealjs_transition: convex 
+:revealjs_previewLinks: true
+
+== How to Win CCDC
+
+Press 's' to show speaker notes...
+
+https://github.com/mubix/howtowinccdc/
