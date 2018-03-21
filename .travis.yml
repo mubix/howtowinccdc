@@ -1,0 +1,15 @@
+language: ruby
+before_install:
+ - gem install asciidoctor-revealjs
+script:
+ - mkdir -p ./build/revealjs/
+ - git clone -b 3.5.0 --depth 1 https://github.com/hakimel/reveal.js.git
+ - cd reveal.js
+ - GIT_WORK_TREE=../build/revealjs/ git checkout -f >> /dev/null
+ - cd ../
+ - asciidoctor-revealjs -o ./build/index.html index.adoc
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: ./build/
