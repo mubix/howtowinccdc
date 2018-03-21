@@ -4,3 +4,6 @@
 
 
 Notes, Slides, and Comments on How to Win CCDC
+
+
+Live Link: https://mubix.github.io/howtowinccdc/
