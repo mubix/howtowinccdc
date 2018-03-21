@@ -9,3 +9,17 @@
 Press 's' to show speaker notes...
 
 https://github.com/mubix/howtowinccdc/
+
+[NOTE.speaker]
+--
+CCDC has both positive and negative effects on those competing on both the red and blue team (student defensive teams) sides. The positives are:
+quick priority based problem solving
+access and on-the-job training with enterprise grade infrastructure and defensive technologies
+access to industry talent and contacts to hiring firms
+However, there is a lack of realism that, no fault to CCDC staffers, is impossible to virtualize or simulate, which can lead to misconceptions on both sides if the players are unaware of it. Budgets, vast array of software/technology solutions,  large user base and large infrastructure are just some of the scale issues that CCDC is faced with simulating. For instance, a defender can very easily pinpoint a new service on a system if it's the only one they need to touch during the competition. And creating policies and procedures around that foundation can lead to problems on-the-job.
+
+With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA systems  this is coming closer to reality but still needs to be addressed to both the student and red team population at these events. IMHO --mubix
+--
+
+== Year(s) in Review
+
