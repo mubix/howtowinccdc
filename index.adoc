@@ -132,6 +132,16 @@ As the team captain your job is to keep the "business" running at let your team 
 While this usually ends up as someone who is skilled in one of the base billets (Linux, Windows, Firewalls etc), they also have to know when to step in to assist the Team Captain.
 --
 
+== Firewall Admin
+
+* http://howtowinccdc.com/wiki/#Firewall
+* RAISE SHIELD Mr Sulu!!
+
+[NOTE.speaker]
+--
+
+--
+
 == Regional Specific Notes
 
 image::imgs/RegionalMap.png[size="200px"]
