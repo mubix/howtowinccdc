@@ -25,8 +25,14 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 
 == What Blue Teams do wrong...
 
+[%step]
 * Get frustrated
+* Think that injects need to be 100%
 * Don't ask enough questions
+* Leave default credentials
+
+[NOTE.speaker]
+--
 ** White/Black cell is there to support you
 ** Injects are the only way you need to support them
 * Focus too much on what is going wrong
@@ -36,3 +42,4 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 ** SSH/Linux
 ** Web Applications and Administrations pages
 ** Databases
+--
