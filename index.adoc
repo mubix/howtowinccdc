@@ -29,7 +29,6 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 
 == What Blue Teams do wrong...
 
-[%step]
 * Get frustrated
 * Think that injects need to be 100%
 * Don't ask enough questions
@@ -60,3 +59,89 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 == Practice and Preparation
 
 image::imgs/ugly_red_book.png[size="200px"]
+
+[%notitle]
+== Practice and Prep Notes 1
+
+* Create a play-book
+* Automate everything you can
+* Have a copy for _every_ member 
+** Even if it's not their focus area
+* Have a list of shortened / easily typed URLs for everything
+
+[NOTE.speaker]
+--
+--
+
+[%notitle]
+== Practice and Prep Notes 2
+
+* Password sheets of easily typed, long, passwords
+* Cheat sheets of useful commands
+* List of known / standard users per OS
+* List of known / standard services per OS
+
+[NOTE.speaker]
+--
+--
+
+== Mubix's Public Repos
+
+?? Hasn't been updated since 2014. Will look into hosting updated files somewhere
+
+== Know your team
+
+== Roles and Chain of Command
+
+* Team Captain
+** Gopher
+*** Firewall Admin
+*** Linux Admin
+*** Windows Admin
+*** Web Admin
+*** Incident Responder
+*** Client Services
+
+[NOTE.speaker]
+--
+--
+
+== Team Captain Responsibilities
+
+* Make sure everyone is focused on the most important tasks
+* Coordinates interdisciplinary requirements
+* Constantly asking for feedback
+* Answers to CEO
+* Insures that nothing distracts other team members
+
+[NOTE.speaker]
+--
+--
+
+== Regional Specific Notes
+
+image::imgs/RegionalMap.png[size="200px"]
+
+Down Arrow...
+
+=== Pacific Rim Region
+
+=== Western Region
+
+=== North-Central Region
+
+=== Rocky-Mountain Region
+
+=== At-Larg Region
+
+=== North-East Region
+
+=== Mid-Atlantic Region
+
+* Scores are ordinal (1st in category get 1 point, 8th, 8)
+
+=== South-East Region
+
+
+
+
