@@ -7,6 +7,7 @@
 :revealjs_slideNumber: true
 :revealjs_transition: convex 
 :revealjs_previewLinks: true
+:revealjs_history: true
 
 == How to Win CCDC
 
