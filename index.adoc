@@ -121,8 +121,16 @@ image::imgs/ugly_red_book.png[size="200px"]
 As the team captain your job is to keep the "business" running at let your team members focus on the technical pieces. You receive injects, check on their status, and turn them in. You answer Orange and CEO requests. Basically you are the funnel that keeps all outside noise from touching your team. 
 --
 
+== Gopher
 
+* Get/Download anything needed
+* Backup for when Team Captain isn't present
+* Backup for one of the base billets
 
+[NOTE.speaker]
+--
+While this usually ends up as someone who is skilled in one of the base billets (Linux, Windows, Firewalls etc), they also have to know when to step in to assist the Team Captain.
+--
 
 == Regional Specific Notes
 
