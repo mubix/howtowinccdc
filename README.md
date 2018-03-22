@@ -7,6 +7,8 @@ Notes, Slides, and Comments on How to Win CCDC
 
 Live Link: http://howtowinccdc.com/
 
+Wiki Link: http://howtowinccdc.com/wiki/
+
 If you have something to contribute, please feel free to 'edit' the `index.adoc` file to add slides
 
 Original Doc: https://docs.google.com/presentation/d/1pPXLg3KqwSMLRCNRfows5QnVI2mLjSmll5vN2WHMFJg
