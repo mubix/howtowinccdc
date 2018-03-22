@@ -110,13 +110,17 @@ image::imgs/ugly_red_book.png[size="200px"]
 
 * Make sure everyone is focused on the most important tasks
 * Coordinates interdisciplinary requirements
-* Constantly asking for feedback
+* Focuses on maximum completion of injects
 * Answers to CEO
 * Insures that nothing distracts other team members
 
 [NOTE.speaker]
 --
+As the team captain your job is to keep the "business" running at let your team members focus on the technical pieces. You receive injects, check on their status, and turn them in. You answer Orange and CEO requests. Basically you are the funnel that keeps all outside noise from touching your team. 
 --
+
+
+
 
 == Regional Specific Notes
 
@@ -139,6 +143,7 @@ Down Arrow...
 === Mid-Atlantic Region
 
 * Scores are ordinal (1st in category get 1 point, 8th, 8)
+* Team Captains that go into CEO meetings with statistics like # of services online, # of injects competed, usually have better meetings
 
 === South-East Region
 
