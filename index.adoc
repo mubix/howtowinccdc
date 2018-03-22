@@ -34,14 +34,24 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 
 [NOTE.speaker]
 --
-* White/Black/Orange whatever Rainbow color teams the particular competition has, they are there to support you. Ask lots of questions.
+* White/Black/Orange whatever rainbow color teams the particular competition has, they are there to support you. Ask lots of questions.
 * Leaving default credentials aren't just at the OS level. Web applications, databases, and other applications are just as important.
 * Patching should be extremely targeted. Only patch what can be used for code execution. Check Metasploit, ask on Twitter, Reddit, etc, prepare yourself.
 --
 
 == Common misconceptions of the Red Team
 
-* You use 0days! - Nope
+* You use 0days! - Not usually
 * You have a head start! - Nope
 * You have advanced tools!
 ** sure.. if you call RDP advanced..
+
+[NOTE.speaker]
+--
+* First, 0days are worth money. Very few Red Teamers are going to drop 0days at a competition for free. Second, real world companies have to figure out how to deal with 0days.
+* Most of the regions give the Red Teams not only the exact same start time, but much less information about the network they are going up against. You have the biggest advantage here.
+* The Red Team's only advantage is the ability to prepare ahead of time. Don't get me wrong, it's a huge advantage due to the fact that Blue Teams' can't bring anything in. However, to make tools that can withstand Blue Teams staring straight at them it takes months of development. There really isn't a fair answer here.
+--
+
+== Practice and Preparation
+
