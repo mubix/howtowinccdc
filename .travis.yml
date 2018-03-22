@@ -4,6 +4,7 @@ before_install:
 script:
  - mkdir -p ./build/revealjs/
  - cp CNAME ./build/
+ - cp -r wiki ./build
  - cp -r imgs ./build/
  - git clone -b 3.6.0 --depth 1 https://github.com/hakimel/reveal.js.git
  - cd reveal.js
