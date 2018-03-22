@@ -12,7 +12,8 @@
 
 Press 's' to show speaker notes...
 
-https://github.com/mubix/howtowinccdc/
+* Repo - https://github.com/mubix/howtowinccdc/
+* Wiki - http://howtowinccdc.com/wiki/
 
 [NOTE.speaker]
 --
