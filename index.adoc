@@ -55,4 +55,4 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 
 == Practice and Preparation
 
-![](imgs/ugly_red_book.png)
+image::imgs/ugly_red_book.png
