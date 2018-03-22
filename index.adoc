@@ -39,7 +39,9 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 * Patching should be extremely targeted. Only patch what can be used for code execution. Check Metasploit, ask on Twitter, Reddit, etc, prepare yourself.
 --
 
-== Misconceptions of the Red Team
+== Common misconceptions of the Red Team
 
-CAUTION: You use 0days!
-* We start at 
+* You use 0days! - Nope
+* You have a head start! - Nope
+* You have advanced tools!
+** sure.. if you call RDP advanced..
