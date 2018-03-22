@@ -30,16 +30,16 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 * Think that injects need to be 100%
 * Don't ask enough questions
 * Leave default credentials
+* Patch too much
 
 [NOTE.speaker]
 --
-** White/Black cell is there to support you
-** Injects are the only way you need to support them
-* Focus too much on what is going wrong
-* Patch everything
-* Leave default passwords
-** Windows
-** SSH/Linux
-** Web Applications and Administrations pages
-** Databases
+* White/Black/Orange whatever Rainbow color teams the particular competition has, they are there to support you. Ask lots of questions.
+* Leaving default credentials aren't just at the OS level. Web applications, databases, and other applications are just as important.
+* Patching should be extremely targeted. Only patch what can be used for code execution. Check Metasploit, ask on Twitter, Reddit, etc, prepare yourself.
 --
+
+== Misconceptions of the Red Team
+
+CAUTION: You use 0days!
+* We start at 
