@@ -3,6 +3,7 @@
 :revealjs_slideNumber: true
 :revealjs_transition: convex 
 :revealjs_previewLinks: true
+:imagedir: imgs
 
 == How to Win CCDC
 
@@ -55,4 +56,4 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 
 == Practice and Preparation
 
-image::imgs/ugly_red_book.png
+image::ugly_red_book.png
