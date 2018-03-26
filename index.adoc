@@ -28,6 +28,10 @@ However, there is a lack of realism that, no fault to CCDC staffers, is impossib
 With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA systems  this is coming closer to reality but still needs to be addressed to both the student and red team population at these events. IMHO --mubix
 --
 
+== Focus!
+
+Every Regional and at Nationals even, things will be different, but the thing you'll hear repeated over and over is "Do your injects!". There are a bunch of services, and they fold up into one "total", injects are one per hour (or so). Many less "checks" > Score per Effort
+
 == Year(s) in Review
 
 == What Blue Teams do wrong...
