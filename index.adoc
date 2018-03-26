@@ -217,7 +217,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Know your enemy
 
-* http://howtowinccdc.com/wiki/#Linux
+* 
 
 [NOTE.speaker]
 --
@@ -249,5 +249,16 @@ Down Arrow...
 === South-East Region
 
 
+== Questions?
 
+* Rob Fuller
+* mubix@hak5.org
+* Twitter: @mubix
+* https://malicious.link/
 
+[NOTE.speaker]
+--
+Special thanks to Devon, Joseph, Marco, Aaron, Raymond, and Brian for the 1 AM jam session to get these slides together. Go social media.
+Alex Herrick for GPOs and other suggestions
+Craig Balding for the beautiful 'iptstate' command
+--
