@@ -6,8 +6,9 @@
 :backend: revealjs
 :revealjs_slideNumber: true
 :revealjs_transition: convex 
-:revealjs_previewLinks: true
+:revealjs_previewLinks: false
 :revealjs_history: true
+
 
 == How to Win CCDC
 
@@ -248,9 +249,10 @@ Down Arrow...
 
 === South-East Region
 
-== Nationals Red Team Debrief
+== Red Team Debriefs
 
-* 2017: https://www.youtube.com/watch?v=2vfjqR2amPs
+* 2017 Nationals: https://www.youtube.com/watch?v=2vfjqR2amPs
+* 2015 SWCCDC: https://www.youtube.com/watch?v=23PmARz25WU
 
 
 == Questions?
