@@ -135,7 +135,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Firewall Admin
 
-* http://howtowinccdc.com/wiki/#Firewall
+* http://howtowinccdc.com/wiki/firewall.html
 * RAISE SHIELD Mr Sulu!!
 * Egress and Ingress filter _quickly_
 
@@ -146,7 +146,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Linux Admin
 
-* http://howtowinccdc.com/wiki/#Linux
+* http://howtowinccdc.com/wiki/linux.html
 
 [NOTE.speaker]
 --
@@ -154,7 +154,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Windows Admin
 
-* http://howtowinccdc.com/wiki/#Windows
+* http://howtowinccdc.com/wiki/windows.html
 
 [NOTE.speaker]
 --
@@ -162,7 +162,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Web Admin
 
-* http://howtowinccdc.com/wiki/#Web
+* http://howtowinccdc.com/wiki/web.html
 
 [NOTE.speaker]
 --
@@ -170,7 +170,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Client Services
 
-* http://howtowinccdc.com/wiki/#ClientServices
+* http://howtowinccdc.com/wiki/clientservices.html
 
 [NOTE.speaker]
 --
@@ -178,7 +178,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Incident Response
 
-* http://howtowinccdc.com/wiki/#IR
+* http://howtowinccdc.com/wiki/incidentresponse.html
 
 [NOTE.speaker]
 --
@@ -195,7 +195,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 == Injects
 
 * Injects are IMPORTANT. Do not fail to turn in SOMETHING for them. Partial credit is way better than nothing.
-* http://howtowinccdc.com/wiki/#Injects
+* http://howtowinccdc.com/wiki/injects.html
 
 [NOTE.speaker]
 --
