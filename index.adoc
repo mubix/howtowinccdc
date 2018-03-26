@@ -88,10 +88,6 @@ image::imgs/ugly_red_book.png[size="200px"]
 --
 --
 
-== Mubix's Public Repos
-
-?? Hasn't been updated since 2014. Will look into hosting updated files somewhere
-
 == Know your team
 
 == Roles and Chain of Command
@@ -194,6 +190,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Injects
 
+* Injects are IMPORTANT. Do not fail to turn in SOMETHING for them. Partial credit is way better than nothing.
 * http://howtowinccdc.com/wiki/#Injects
 
 [NOTE.speaker]
@@ -253,7 +250,6 @@ Down Arrow...
 
 * 2017 Nationals: https://www.youtube.com/watch?v=2vfjqR2amPs
 * 2015 SWCCDC: https://www.youtube.com/watch?v=23PmARz25WU
-
 
 == Questions?
 
