@@ -136,10 +136,91 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 * http://howtowinccdc.com/wiki/#Firewall
 * RAISE SHIELD Mr Sulu!!
+* Egress and Ingress filter _quickly_
 
 [NOTE.speaker]
 --
+* CAPRICA (ACL Generator) is _AWESOME_: https://github.com/google/capirca 
+--
 
+== Linux Admin
+
+* http://howtowinccdc.com/wiki/#Linux
+
+[NOTE.speaker]
+--
+--
+
+== Windows Admin
+
+* http://howtowinccdc.com/wiki/#Windows
+
+[NOTE.speaker]
+--
+--
+
+== Web Admin
+
+* http://howtowinccdc.com/wiki/#Web
+
+[NOTE.speaker]
+--
+--
+
+== Client Services
+
+* http://howtowinccdc.com/wiki/#ClientServices
+
+[NOTE.speaker]
+--
+--
+
+== Incident Response
+
+* http://howtowinccdc.com/wiki/#IR
+
+[NOTE.speaker]
+--
+--
+
+== Physical Space
+
+* Go into blackout
+
+[NOTE.speaker]
+--
+--
+
+== Injects
+
+* http://howtowinccdc.com/wiki/#Injects
+
+[NOTE.speaker]
+--
+--
+
+== Know your network
+
+* 
+
+[NOTE.speaker]
+--
+--
+
+== Know your defences
+
+* 
+
+[NOTE.speaker]
+--
+--
+
+== Know your enemy
+
+* http://howtowinccdc.com/wiki/#Linux
+
+[NOTE.speaker]
+--
 --
 
 == Regional Specific Notes
