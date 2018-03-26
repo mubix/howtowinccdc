@@ -257,7 +257,7 @@ Down Arrow...
 
 * Rob Fuller
 * mubix@hak5.org
-* Twitter: @mubix
+* Twitter: [@mubix](https://twitter.com/mubix)
 * https://malicious.link/
 
 [NOTE.speaker]
