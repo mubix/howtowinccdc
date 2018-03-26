@@ -1,3 +1,5 @@
+# How to Win CCDC Wiki
+
 This wiki is designed to be available to anyone to use for links, commands and such.
 
 - [Firewall](wiki/firewall.md)
