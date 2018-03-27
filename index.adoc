@@ -34,7 +34,7 @@ At Nationals and at each Regional things will be different, however the thing yo
 
 == Obtain Mentors
 
-In [Zak Thoreson's](https://www.aqueousanalytics.com/blog/2018/3/27/ccdc-takeaways-and-challeneges-of-managing-a-team) blog post he mentions reaching out to industry professionals for help preparing for the competition. DO THIS! Invite the Red Team to come talk about / perform / demo attacks and their defenses.
+In link:https://www.aqueousanalytics.com/blog/2018/3/27/ccdc-takeaways-and-challeneges-of-managing-a-team[Zak Thoreson's] blog post he mentions reaching out to industry professionals for help preparing for the competition. DO THIS! Invite the Red Team to come talk about / perform / demo attacks and their defenses.
 
 == Everyone has a plan...
 
