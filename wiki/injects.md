@@ -20,13 +20,13 @@
 
 ## North East CCDC
 
-#### Configure Printer
+### Configure Printer
 
 **Inject:** We've had new printers dropped off today, they need to be configured to work with out system. Please print a test message within 15 minutes and hand it to your White team member
 
 **Suggested Solution:**(Please submit suggestions on what worked for you in the issues)
 
-#### Inventory
+### Inventory
 
 **Inject:** The previous IT team did a poor job keeping the management informed on what the IT team was doing. As a result, we do not have a clear idea of what resources we currently have available. Please inventory every system, the accounts they poses, and the services they offer. Provide a summary report of all that you find. The report should list:
 
