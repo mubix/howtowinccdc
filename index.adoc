@@ -30,7 +30,7 @@ With the addition of the "cloud" to Nationals, and Mid-Atlantic’s SCADA system
 
 == Focus!
 
-Every Regional and at Nationals even, things will be different, but the thing you'll hear repeated over and over is "Do your injects!". There are a bunch of services, and they fold up into one "total", injects are one per hour (or so). Many less "checks" > Score per Effort
+At Nationals and at each Regional things will be different, however the thing you'll hear repeated at every event is "Do your injects!". Effective teams identify what tasks create the most amount of points for the least amount of effort. 
 
 == Year(s) in Review
 
