@@ -157,6 +157,8 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Linux Admin
 
+* Move or disable the SSH port if it isn't scored
+* OpenSnitch
 * http://howtowinccdc.com/wiki/linux.html
 
 [NOTE.speaker]
@@ -165,6 +167,7 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Windows Admin
 
+* GlassWire
 * http://howtowinccdc.com/wiki/windows.html
 
 [NOTE.speaker]
