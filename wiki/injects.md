@@ -42,4 +42,4 @@ Please keep the report updated to reflect changes to our network. If any of this
 - For the services list, just list what ports are available or needed for scoring / business actions
 - For the account list, just print out a `net user` or `cat /etc/passwd`, going fancier is probably a waste of time.
 
-## Wester Regional CCDC
+## Western Regional CCDC
