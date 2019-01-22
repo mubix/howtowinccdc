@@ -6,3 +6,13 @@
 * http://ctf.forgottensec.com/wiki/index.php?title=Main_Page
 * https://www.reddit.com/r/ccdc/
 * https://bluescreenofjeff.com/2017-05-02-red-teaming-for-pacific-rim-ccdc-2017/
+* http://lockboxx.blogspot.com/2014/04/red-teaming-at-nccdc-2014.html 
+* http://lockboxx.blogspot.com/2015/04/red-teaming-at-nccdc-2015.html
+* http://lockboxx.blogspot.com/2015/03/wrccdc-2015.html
+* http://lockboxx.blogspot.com/2015/03/red-teaming-at-prccdc-2015.html
+* http://lockboxx.blogspot.com/2016/03/red-teaming-at-wrccdc-2016.html
+* http://lockboxx.blogspot.com/2016/04/red-teaming-at-nccdc-2016.html
+* http://lockboxx.blogspot.com/2017/03/red-teaming-at-wrccdc-2017.html
+* http://lockboxx.blogspot.com/2017/04/red-teaming-at-nccdc-2017.html
+* http://lockboxx.blogspot.com/2018/03/red-teaming-at-wrccdc-2018.html
+* http://lockboxx.blogspot.com/2018/04/red-teaming-at-nccdc-2018.html
