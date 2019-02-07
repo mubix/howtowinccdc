@@ -168,10 +168,12 @@ While this usually ends up as someone who is skilled in one of the base billets 
 == Windows Admin
 
 * GlassWire
+* Powershell
 * http://howtowinccdc.com/wiki/windows.html
 
 [NOTE.speaker]
 --
+Don't assume that because you know how to use a couple of tools to create and manage a user in active directory that you know how to work active directory. Practice common user administration tasks in Powershell, as well as methods of breaking into a windows computer. Many times students show up and the first windows machine they don't have a password to will stump them.
 --
 
 == Web Admin
