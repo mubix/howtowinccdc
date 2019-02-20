@@ -6,7 +6,7 @@ script:
  - cp CNAME ./build/
  - cp -r wiki ./build
  - cp -r imgs ./build/
- - git clone -b 3.6.0 --depth 1 https://github.com/hakimel/reveal.js.git
+ - git clone -b 3.7.0 --depth 1 https://github.com/hakimel/reveal.js.git
  - cd reveal.js
  - GIT_WORK_TREE=../build/revealjs/ git checkout -f >> /dev/null
  - cd ../
