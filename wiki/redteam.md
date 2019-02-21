@@ -39,6 +39,8 @@ and core members of the Red Team elect to participate.
 2. We are not allowed to break any system or service in a non-trivial recoverable way until near the end of the competition. (Last 30 minutes of Qualifiers, Last half of the last day of Finals)
 3. This event is a learning experience for the Blue Teams first and foremost. While learning can happen on the Red Team, that is not our mission, don't apply to the Red Team expecting mentorship. The Red Team is there to provide a advesarial simulation for the competition that can move and adapt like real adversaries.
 
+## Mid-West Region (MWCCDC)
+
 ## South-East Region (SECCDC)
 
 ## South-West Region (SWCCDC)
