@@ -4,9 +4,9 @@
 
 Notes, Slides, Comments, and Commands on How to Win CCDC
 
-Live Link: [http://howtowinccdc.com/](http://howtowinccdc.com/)
+Live Link: [https://howtowinccdc.com/](https://howtowinccdc.com/)
 
-Wiki Link: [http://howtowinccdc.com/wiki/](http://howtowinccdc.com/wiki/)
+Wiki Link: [https://howtowinccdc.com/wiki/](https://howtowinccdc.com/wiki/)
 
 If you have something to contribute, please feel free to 'edit' the `index.adoc` file to add slides
 
