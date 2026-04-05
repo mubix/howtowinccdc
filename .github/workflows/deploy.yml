@@ -24,17 +24,19 @@ jobs:
           ruby-version: '3.3'
 
       - name: Install asciidoctor-revealjs
-        run: gem install asciidoctor-revealjs
+        run: gem install asciidoctor-revealjs --version '~> 5.0'
 
       - name: Build site
         run: |
-          mkdir -p ./build/revealjs/
+          mkdir -p ./build/
           cp CNAME ./build/
           cp -r imgs ./build/
-          git clone -b 3.7.0 --depth 1 https://github.com/hakimel/reveal.js.git
-          cd reveal.js
-          GIT_WORK_TREE=../build/revealjs/ git checkout -f >> /dev/null
-          cd ../
+
+          # Download reveal.js 4.x (compatible with asciidoctor-revealjs 5.x)
+          REVEALJS_VERSION=4.6.1
+          curl -sL "https://github.com/hakimel/reveal.js/archive/refs/tags/${REVEALJS_VERSION}.tar.gz" | tar xz
+          mv "reveal.js-${REVEALJS_VERSION}" ./build/revealjs
+
           asciidoctor-revealjs -o ./build/index.html index.adoc
 
       - uses: actions/upload-pages-artifact@v3
