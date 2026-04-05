@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install asciidoctor-revealjs
+        run: gem install asciidoctor-revealjs
+
+      - name: Build site
+        run: |
+          mkdir -p ./build/revealjs/
+          cp CNAME ./build/
+          cp -r imgs ./build/
+          git clone -b 3.7.0 --depth 1 https://github.com/hakimel/reveal.js.git
+          cd reveal.js
+          GIT_WORK_TREE=../build/revealjs/ git checkout -f >> /dev/null
+          cd ../
+          asciidoctor-revealjs -o ./build/index.html index.adoc
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
