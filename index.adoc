@@ -15,7 +15,6 @@
 Press 's' to show speaker notes...
 
 * Repo - https://github.com/mubix/howtowinccdc/
-* Wiki - http://howtowinccdc.com/wiki/
 
 [NOTE.speaker]
 --
@@ -145,7 +144,6 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Firewall Admin
 
-* http://howtowinccdc.com/wiki/firewall.html
 * RAISE SHIELD Mr Sulu!!
 * Egress and Ingress filter _quickly_
 * You are the point that traffic can generally be trusted. Help your other team members with identifying malicious traffic
@@ -157,7 +155,6 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Linux Admin
 
-* http://howtowinccdc.com/wiki/linux.html
 * Move or disable the SSH port if it isn't scored
 * OpenSnitch
 
@@ -167,7 +164,6 @@ While this usually ends up as someone who is skilled in one of the base billets 
 
 == Windows Admin
 
-* http://howtowinccdc.com/wiki/windows.html
 * GlassWire
 * Powershell
 
@@ -179,23 +175,17 @@ Don't assume that because you know how to use a couple of tools to create and ma
 
 == Web Admin
 
-* http://howtowinccdc.com/wiki/web.html
-
 [NOTE.speaker]
 --
 --
 
 == Client Services
 
-* http://howtowinccdc.com/wiki/clientservices.html
-
 [NOTE.speaker]
 --
 --
 
 == Incident Response
-
-* http://howtowinccdc.com/wiki/incidentresponse.html
 
 [NOTE.speaker]
 --
@@ -212,7 +202,6 @@ Don't assume that because you know how to use a couple of tools to create and ma
 == Injects
 
 * Injects are IMPORTANT. Do not fail to turn in SOMETHING for them. Partial credit is way better than nothing.
-* http://howtowinccdc.com/wiki/injects.html
 
 [NOTE.speaker]
 --
