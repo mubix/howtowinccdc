@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Win CCDC</title>
+  <meta name="author" content="Rob Fuller">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+  <style>
+    .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+    .reveal ul { text-align: left; }
+    .reveal ol { text-align: left; }
+    .reveal .small { font-size: 0.7em; }
+    .reveal strong { color: #e7ad52; }
+    .reveal section img { border: none; box-shadow: none; background: none; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ======== TITLE ======== -->
+<section>
+  <h1>How to Win CCDC</h1>
+  <p>Press 's' to show speaker notes...</p>
+  <p><a href="https://github.com/mubix/howtowinccdc/">Repo</a></p>
+  <aside class="notes">
+    CCDC has both positive and negative effects on those competing on both the red and blue team (student defensive teams) sides. The positives are:
+    quick priority based problem solving, access and on-the-job training with enterprise grade infrastructure and defensive technologies,
+    access to industry talent and contacts to hiring firms.
+    However, there is a lack of realism that, no fault to CCDC staffers, is impossible to virtualize or simulate, which can lead to misconceptions
+    on both sides if the players are unaware of it. Budgets, vast array of software/technology solutions, large user base and large infrastructure
+    are just some of the scale issues that CCDC is faced with simulating.
+
+    With the addition of cloud infrastructure at Nationals, and the increasing complexity of regional environments including Kubernetes,
+    Terraform-deployed AWS infrastructure, and SCADA/ICS systems, the competition is closer to reality than ever. But the gap still exists
+    and should be understood by both sides. IMHO --mubix
+  </aside>
+</section>
+
+<!-- ======== THE PLAYING FIELD ======== -->
+<section>
+  <h2>The Playing Field</h2>
+  <p>CCDC isn't a CTF. It's a business simulation. You inherit a broken corporate network full of vulnerabilities, and your job is to keep the business running while professionals try to take it apart.</p>
+  <p>Three things matter: Service uptime, business injects, and not getting owned.</p>
+  <aside class="notes">
+    Think of it this way: you're the new IT team at a company that just fired their last admins for cause. Everything is misconfigured, nothing is patched,
+    and the CEO needs things done yesterday. Oh, and nation-state actors are actively targeting you. Welcome to Tuesday.
+  </aside>
+</section>
+
+<!-- ======== HOW SCORING WORKS ======== -->
+<section>
+  <h2>How Scoring Works</h2>
+  <ul>
+    <li><strong>Service Availability (~50%)</strong> - Automated scoring engine polls your services</li>
+    <li><strong>Business Injects (~50%)</strong> - Tasks from the Orange Team / management</li>
+    <li><strong>Red Team Penalties</strong> - Points deducted for breaches
+      <ul>
+        <li>User-level access: minor penalty</li>
+        <li>Root/admin access: major penalty</li>
+        <li>PII/PHI exfiltration: <strong>massive</strong> point loss (highest at Nationals)</li>
+      </ul>
+    </li>
+  </ul>
+  <aside class="notes">
+    The scoring engine checks your services from outside your network at regular intervals. HTTP, HTTPS, DNS, SMTP, POP3, and increasingly
+    things like Modbus and other OT protocols. If your firewall blocks the scoring engine, that's the same as the service being down. You eat those points.
+
+    The balance is intentional. You can't just firewall everything off and call it secure. A perfectly locked-down network that can't serve the business
+    is a failure. This is the real world lesson CCDC teaches better than almost anything else.
+
+    Red Team penalties scale with severity. A user-level compromise is bad. Root access is worse. But stealing PII/PHI data from the company database?
+    That's the one that destroys your score. At Nationals, data exfiltration is the single highest point loss category. Protect. Your. Data.
+  </aside>
+</section>
+
+<!-- ======== THE TEAMS ======== -->
+<section>
+  <section>
+    <h2>The Teams: Who's Who</h2>
+    <p>Not everyone at CCDC is trying to ruin your day. Most of them are there to help. Learn who they are.</p>
+    <p class="small">↓ Scroll down for each team</p>
+    <aside class="notes">
+      One of the most common mistakes new teams make is treating everyone who isn't on their team as an adversary.
+      Understanding the different team roles will save you time, points, and frustration.
+    </aside>
+  </section>
+  <section>
+    <h3>Blue Team (That's You)</h3>
+    <ul>
+      <li>Student competitors representing your school</li>
+      <li>Secure the inherited network</li>
+      <li>Keep services up and scored</li>
+      <li>Complete business injects</li>
+      <li>Hunt threats and respond to incidents</li>
+    </ul>
+    <aside class="notes">
+      You are the IT department. You own everything that happens on your network, good and bad. The sooner you internalize that, the better you'll perform.
+    </aside>
+  </section>
+  <section>
+    <h3>White Team (The Judges)</h3>
+    <ul>
+      <li>They observe, evaluate, and judge your performance</li>
+      <li>They grade your injects and incident response reports</li>
+      <li>They are the final word on rule disputes</li>
+      <li><strong>Be professional with them</strong> - they're evaluating you as much on conduct as technical skill</li>
+    </ul>
+    <aside class="notes">
+      White Team judges are watching everything. How you communicate, how you handle stress, how you interact with each other.
+      Treat every interaction with White Team like a job interview, because functionally, it is.
+      Many CCDC judges are hiring managers in their day jobs.
+    </aside>
+  </section>
+  <section>
+    <h3>Black Team (Infrastructure)</h3>
+    <ul>
+      <li>They built and maintain the competition environment</li>
+      <li>Scoring engine, networking, virtualization - that's all them</li>
+      <li>You can request help if you completely lose a box, but it costs points</li>
+      <li>That cost scales on a <strong>Fibonacci sequence</strong> - 1st request is cheap, 5th is devastating</li>
+    </ul>
+    <aside class="notes">
+      Black Team interventions use Fibonacci scaling. First and second requests multiply the base cost by 1. Third request multiplies by 2.
+      Fourth by 3. Fifth by 5. It gets ugly fast. Exhaust every other option before calling Black Team. Rebuild from scratch if you can.
+      Only call them when the alternative is zero points on that service for the rest of the competition.
+    </aside>
+  </section>
+  <section>
+    <h3>Orange Team (The Business)</h3>
+    <ul>
+      <li>Simulated executives, employees, and clients</li>
+      <li>They submit business injects - helpdesk tickets, policy requests, CEO briefings</li>
+      <li>They evaluate your professionalism and communication</li>
+      <li><strong>Do not ignore them</strong> to fight the Red Team</li>
+    </ul>
+    <aside class="notes">
+      Here's the thing new teams don't understand: injects are roughly half your score, and unlike Red Team attacks, they're entirely within your control.
+      You can't predict when Red Team will hit you, but you can absolutely control the quality and timeliness of your inject responses. Teams that ignore
+      Orange Team to fight Red Team in the terminal are making a mathematically terrible decision.
+
+      Orange Team injects range from "add a user to Active Directory" to "draft a disaster recovery policy for the board of directors."
+      Have templates ready. Have someone dedicated to this. The Injects Lead role exists for a reason.
+    </aside>
+  </section>
+  <section>
+    <h3>Red Team (The Adversary)</h3>
+    <ul>
+      <li>Professional penetration testers and offensive security researchers</li>
+      <li>Their job: breach your systems, steal data, disrupt services, maintain access</li>
+      <li>They simulate advanced persistent threats</li>
+    </ul>
+    <aside class="notes">
+      I'll talk more about what Red Team actually does in a bit, but the key thing to understand is that Red Team is playing a very specific role in the simulation.
+      They're not there to be mean. They're simulating the threat landscape that every real organization faces. The better you understand what they actually do,
+      the better you'll defend against it.
+    </aside>
+  </section>
+  <section>
+    <h3>Gold &amp; Green Teams</h3>
+    <p><strong>Gold Team</strong> - Event administration, logistics, sponsorships. You probably won't interact with them much.</p>
+    <p><strong>Green Team</strong> - They help Black Team deploy and tear down the competition infrastructure. They ensure every Blue Team starts with an identical environment.</p>
+  </section>
+</section>
+
+<!-- ======== FOCUS ======== -->
+<section>
+  <h2>Focus!</h2>
+  <p>At Nationals and at each Regional things will be different, however the thing you'll hear repeated at every event is "Do your injects!". Effective teams identify what tasks create the most amount of points for the least amount of effort.</p>
+</section>
+
+<!-- ======== OBTAIN MENTORS ======== -->
+<section>
+  <h2>Obtain Mentors</h2>
+  <p>In <a href="https://www.aqueousanalytics.com/blog/2018/3/27/ccdc-takeaways-and-challeneges-of-managing-a-team">Zak Thoreson's</a> blog post he mentions reaching out to industry professionals for help preparing for the competition. DO THIS! Invite the Red Team to come talk about / perform / demo attacks and their defenses.</p>
+</section>
+
+<!-- ======== MIKE TYSON ======== -->
+<section>
+  <h2>Everyone has a plan...</h2>
+  <img src="imgs/Mike_Tyson.png" style="max-height: 300px;">
+  <p>Until they get hit in the mouth -- Mike Tyson</p>
+</section>
+
+<!-- ======== DEMYSTIFYING RED TEAM ======== -->
+<section>
+  <section>
+    <h2>Demystifying the Red Team</h2>
+    <p>Let's talk about what Red Team actually does. Because it isn't magic.</p>
+    <aside class="notes">
+      I've been on the Red Team side of CCDC for a long time. The single biggest advantage we have isn't secret tools or 0days. It's consistency.
+      We practice, share ideas, write code, and refine our techniques all 12 months of the year, even though CCDC season is only February through April.
+      Many Blue Teams start prepping a few weeks before qualifiers. That gap in preparation time is our real edge, not some mystical hacking ability.
+
+      To be fair, I don't want to discount the enormous effort it takes to work your way through university and try to add CCDC on top of it.
+      You're juggling classes, jobs, and life. But the teams that find a way to practice consistently throughout the year are the ones that close the gap.
+    </aside>
+  </section>
+  <section>
+    <h3>Red Team Reality Check</h3>
+    <p>What Red Team does is <strong>not</strong> magic:</p>
+    <ul>
+      <li>We run the same tools you can download and learn</li>
+      <li>We exploit the same misconfigurations you can find and fix</li>
+      <li>We automate heavily - our scripts change passwords, plant backdoors, and exfiltrate data faster than any human types</li>
+      <li>We know operating systems deeply because we break them all year long</li>
+      <li>We talk, share notes, and build on each other's work constantly</li>
+    </ul>
+    <aside class="notes">
+      Here's the honest truth: most of what Red Team does in the first 15 minutes of a competition is automated. We have scripts that scan for default
+      credentials, deploy persistence mechanisms, and establish command and control channels. It's not a person sitting there manually hacking each of your
+      8 teams simultaneously. It's automation hitting all of you at once, and then humans follow up on whatever worked.
+
+      If you change default passwords before our automation runs, half our playbook is dead on arrival.
+    </aside>
+  </section>
+  <section>
+    <h3>Common Misconceptions</h3>
+    <ul>
+      <li>You use 0days! - Not usually</li>
+      <li>You have a head start! - Nope</li>
+      <li>You have advanced tools! ...sure, if you call RDP advanced</li>
+      <li>You're doing something we can't understand! - Everything we do, you can learn to detect and prevent</li>
+    </ul>
+    <aside class="notes">
+      First, 0days are worth money. Very few Red Teamers are going to drop 0days at a competition for free. Second, real world companies have to figure out how to deal with 0days.
+      Most of the regions give the Red Teams not only the exact same start time, but much less information about the network they are going up against. You have the biggest advantage here.
+      The Red Team's real advantage is preparation time and consistency. We work on this year round. To make tools that can withstand Blue Teams staring straight at them it takes months of development.
+      AI-assisted exploitation tools are increasingly common on Red Teams. Automated agents can parse configurations, find vulnerabilities, and generate payloads in milliseconds.
+      The counter? Good fundamentals. Change defaults, filter egress, monitor logs. The basics still beat the fancy stuff.
+    </aside>
+  </section>
+  <section>
+    <h3>What Red Team Actually Targets</h3>
+    <p>In order of what we try first:</p>
+    <ol>
+      <li><strong>Default and weak credentials</strong> - always, every time, first thing</li>
+      <li><strong>Unnecessary services</strong> - if it's running and you don't need it, we'll use it</li>
+      <li><strong>Egress to our C2 servers</strong> - reverse shells, DNS tunnels, HTTP callbacks</li>
+      <li><strong>Your automation infrastructure</strong> - if we own your Ansible server, we own everything</li>
+      <li><strong>Lateral movement via AD</strong> - Kerberoasting, Pass-the-Hash, GPO abuse</li>
+      <li><strong>Web application backdoors</strong> - webshells dropped in your scored web apps</li>
+      <li><strong>Data exfiltration</strong> - PII/PHI from databases for maximum point damage</li>
+    </ol>
+    <aside class="notes">
+      Notice how the list starts with the simplest stuff. Default credentials aren't glamorous but they work almost every single competition.
+      We don't need to break in if you left the door unlocked. Every item on this list has a straightforward defensive counter. That's the point.
+    </aside>
+  </section>
+</section>
+
+<!-- ======== THE FIRST 15 MINUTES ======== -->
+<section>
+  <section>
+    <h2>The First 15 Minutes</h2>
+    <p>The competition is often won or lost here. Red Team hits you with automation immediately. Your counter: have your own automation ready.</p>
+    <aside class="notes">
+      Red Teams enter the environment armed with pre-compiled reconnaissance data, default credential lists, and custom tooling designed to establish
+      persistence before you can even log into your firewalls. If you're manually changing passwords one at a time, you've already lost the race.
+    </aside>
+  </section>
+  <section>
+    <h3>The Checklist</h3>
+    <p>Three things, in this order, as fast as possible:</p>
+    <ol>
+      <li><strong>Mass credential rotation</strong> - every account, every service, every database, all at once</li>
+      <li><strong>Egress filtering</strong> - default deny outbound, whitelist only what's scored</li>
+      <li><strong>Kill unnecessary services</strong> - if it's not scored, turn it off</li>
+    </ol>
+    <aside class="notes">
+      Phase 1: Credential rotation. Have scripts ready that change every password on every system simultaneously. User accounts, service accounts,
+      database admin passwords, application passwords. All of them. If you're doing this by hand, you're too slow. Red Team automation is already
+      using those defaults before you finish your first password change.
+
+      Phase 2: Egress filtering. This is the one that separates good teams from great ones. Inexperienced teams focus entirely on blocking inbound traffic.
+      But Red Team payloads initiate outbound connections - reverse shells, C2 callbacks, DNS tunnels. Switch your entire network to default-deny egress
+      and only whitelist the specific protocols and ports needed for scored services. This single action neutralizes the majority of Red Team persistence.
+
+      Phase 3: Attack surface reduction. Cross-reference every running service against the scoring engine topology. Anything not explicitly scored gets
+      terminated and uninstalled. Every unnecessary service, open port, and running application is an entry point you have to defend. Don't.
+    </aside>
+  </section>
+</section>
+
+<!-- ======== PRACTICE AND PREPARATION ======== -->
+<section>
+  <section>
+    <h2>Practice and Preparation</h2>
+    <img src="imgs/ugly_red_book.png" style="max-height: 300px;">
+  </section>
+  <section>
+    <h3>Prep Notes</h3>
+    <ul>
+      <li>Create a play-book</li>
+      <li>Automate everything you can</li>
+      <li>Have a copy for <em>every</em> member, even if it's not their focus area</li>
+      <li>Have a list of shortened / easily typed URLs for everything</li>
+    </ul>
+    <aside class="notes">
+      Your playbook should include hardening scripts for every OS you might encounter, inject response templates, incident response report templates,
+      and checklists for the first 15 minutes. Practice running your automation in a lab environment. Time yourselves. Shave seconds off.
+    </aside>
+  </section>
+  <section>
+    <h3>What to Bring (on paper)</h3>
+    <ul>
+      <li>Password sheets of easily typed, long, passwords</li>
+      <li>Cheat sheets of useful commands</li>
+      <li>List of known / standard users per OS</li>
+      <li>List of known / standard services per OS</li>
+      <li>Inject response templates ready to customize</li>
+      <li>Incident response report templates (NIST 800-61 format)</li>
+    </ul>
+    <aside class="notes">
+      Pre-built templates for injects and IR reports are a game changer. When Red Team breaches a service and you need to file an incident response report,
+      the team that has a template ready and just fills in the specifics will recover points. The team that stares at a blank document will not.
+    </aside>
+  </section>
+</section>
+
+<!-- ======== CONSISTENCY IS KING ======== -->
+<section>
+  <h2>Consistency is King</h2>
+  <p>Red Teamers practice 12 months a year. CCDC season is only Feb through April.</p>
+  <ul>
+    <li>Build a lab and break it. Rebuild it. Break it again.</li>
+    <li>Practice your automation until it's muscle memory</li>
+    <li>Run mock competitions with your team</li>
+    <li>Study Red Team tools and techniques - learn what you're defending against</li>
+    <li>Cross-train so everyone can cover at least two roles</li>
+  </ul>
+  <aside class="notes">
+    I get it. University is hard. You're balancing classes, maybe a job, and trying to have a life. I don't want to discount the immense effort it takes
+    to add CCDC on top of all that. But the teams that find even a few hours a week throughout the year to practice together are the ones that make it
+    to Nationals. You don't need to match Red Team's schedule. You just need to be consistent enough that your fundamentals are automatic when the pressure hits.
+  </aside>
+</section>
+
+<!-- ======== ROLES ======== -->
+<section>
+  <section>
+    <h2>Know Your Team</h2>
+    <h3>Roles and Chain of Command</h3>
+    <ul>
+      <li>Team Captain / Incident Commander</li>
+      <li>Injects Lead / Business Liaison</li>
+      <li>Networks and Firewall Lead</li>
+      <li>Linux Systems Administrator</li>
+      <li>Windows and Active Directory Administrator</li>
+      <li>Services and Web Administrator</li>
+      <li>Threat Hunter / Incident Responder</li>
+      <li>Automation and Deployment Engineer</li>
+    </ul>
+    <aside class="notes">
+      Modern CCDC requires an 8-person roster with strict role specialization. The "hero complex" where one or two skilled people try to do everything
+      is the single most common failure mode. Championship teams delegate aggressively and cross-train constantly.
+    </aside>
+  </section>
+  <section>
+    <h3>Team Captain</h3>
+    <ul>
+      <li>Make sure everyone is focused on the most important tasks</li>
+      <li>Coordinates interdisciplinary requirements</li>
+      <li>Focuses on maximum completion of injects</li>
+      <li>Answers to CEO</li>
+      <li>Insures that nothing distracts other team members</li>
+      <li>Monitors the scoring dashboard</li>
+      <li>Becomes Incident Commander when breaches occur</li>
+    </ul>
+    <aside class="notes">
+      As the team captain your job is to keep the "business" running and let your team members focus on the technical pieces. You receive injects, check on
+      their status, and turn them in. You answer Orange and CEO requests. Basically you are the funnel that keeps all outside noise from touching your team.
+      In a mature team, the Captain rarely touches a terminal. When a critical breach occurs, you shift to Incident Commander mode: halt non-essential tasks,
+      coordinate the threat hunt, and ensure isolation protocols don't kill scored services.
+    </aside>
+  </section>
+  <section>
+    <h3>Injects Lead / Business Liaison</h3>
+    <ul>
+      <li>Manages the Orange Team interface</li>
+      <li>Translates technical work into professional business documents</li>
+      <li>Owns inject deadlines - late submissions get zero points regardless of quality</li>
+      <li>Has pre-compiled templates for policies, memos, and reports</li>
+      <li>Works in parallel with the technical team, not in series</li>
+    </ul>
+    <aside class="notes">
+      This role is statistically the differentiator between a podium finish and a mid-tier placement. Injects account for roughly half the total score
+      and unlike Red Team attacks, they're entirely within your control. Have templates for disaster recovery plans, acceptable use policies, risk assessments,
+      and executive memos ready before competition day. Partial credit on an inject is always better than nothing. Turn in something for every single one.
+    </aside>
+  </section>
+  <section>
+    <h3>Firewall Admin</h3>
+    <ul>
+      <li>RAISE SHIELD Mr Sulu!!</li>
+      <li>Egress and Ingress filter <em>quickly</em></li>
+      <li>Default deny outbound, whitelist scored services</li>
+      <li>You are the choke point - if Red Team can't call home, their persistence dies</li>
+      <li>Help your team identify malicious traffic</li>
+    </ul>
+    <aside class="notes">
+      Your perimeter firewall is the single most impactful defensive asset in the competition. A properly configured egress filter neutralizes the majority
+      of Red Team persistence mechanisms. Most Red Team payloads need to call home to a C2 server. If they can't reach it, the payload is dead.
+
+      Modern competitions use Palo Alto Networks, pfSense, or iptables depending on the region. Know all of them.
+      CAPRICA (ACL Generator) is AWESOME: https://github.com/google/capirca
+
+      Critical: the scoring engine checks from OUTSIDE your network. If your firewall blocks the scoring engine's traffic, you lose those points.
+      Always verify your rules against the scoring engine IPs before going to default deny.
+    </aside>
+  </section>
+  <section>
+    <h3>Linux Admin</h3>
+    <ul>
+      <li>Move or disable SSH if it isn't scored</li>
+      <li>Automate hardening with Ansible playbooks</li>
+      <li>sysctl hardening: disable ICMP redirects, restrict kernel pointers, disable IPv6 if not needed</li>
+      <li>SELinux/AppArmor - enforce it, don't disable it</li>
+      <li>Fail2Ban on anything accepting authentication</li>
+      <li>Know systemd inside and out - that's where persistence hides</li>
+    </ul>
+    <aside class="notes">
+      Red Team persistence on Linux commonly lives in cron jobs, systemd unit files, .bashrc modifications, authorized_keys additions, and SUID binaries.
+      Know where to look. Have scripts that baseline these and alert on changes. The command find / -perm -4000 -type f finds SUID binaries.
+      systemctl list-unit-files --state=enabled shows you what's set to start on boot. Audit these immediately.
+    </aside>
+  </section>
+  <section>
+    <h3>Windows Admin</h3>
+    <ul>
+      <li>PowerShell is your best friend and worst enemy</li>
+      <li>Group Policy Objects are how you enforce security at scale</li>
+      <li>Kerberos attacks (Kerberoasting, AS-REP Roasting) are Red Team favorites</li>
+      <li>Sysmon + Windows Event Forwarding = visibility</li>
+      <li>Windows Defender is actually good now - make sure it's running and updated</li>
+      <li>Know how to find and kill persistence in the registry, scheduled tasks, and WMI</li>
+    </ul>
+    <aside class="notes">
+      Active Directory is the crown jewel Red Team wants. If they get Domain Admin, the competition is effectively over for your Windows infrastructure.
+      Kerberoasting is trivially easy and almost always works against service accounts with weak passwords. Set long, complex passwords on every service account.
+      Disable NTLM where possible. Monitor for unusual Kerberos ticket requests.
+
+      Sysinternals tools are invaluable. Autoruns shows you everything set to run at startup. Process Explorer shows running process trees.
+      TCPView shows active network connections. Learn these tools cold.
+    </aside>
+  </section>
+  <section>
+    <h3>Services and Web Admin</h3>
+    <ul>
+      <li>Maintain uptime for all scoring engine services</li>
+      <li>Audit web applications for backdoors immediately - check for recently modified PHP/ASP files</li>
+      <li>Secure databases: rotate creds, restrict network access, back up scored data</li>
+      <li>ModSecurity or similar WAF in front of web apps</li>
+      <li>Docker/Kubernetes: know container escapes and how to prevent them</li>
+    </ul>
+    <aside class="notes">
+      Web applications are a favorite Red Team target because they're publicly accessible and often full of vulnerabilities. The first thing you should do
+      is check for webshells - files recently added or modified in web directories. Look for base64 encoded strings, eval() calls, and files that don't
+      match the application's normal codebase.
+
+      For databases, the PII/PHI data stored there is the highest-value target at Nationals. Back up that data, restrict database network access to only
+      the application servers that need it, and rotate every database credential immediately. If Red Team exfiltrates your customer database, that's the
+      single biggest point loss in the competition.
+
+      Modern competitions increasingly include containers. A container escape into the host, followed by a pivot to the database, is a real attack path.
+      Know your container runtime security.
+    </aside>
+  </section>
+  <section>
+    <h3>Threat Hunter / Incident Responder</h3>
+    <ul>
+      <li>Assume the perimeter is already breached - hunt from minute one</li>
+      <li>Centralize logs: Splunk, Graylog, or ELK stack</li>
+      <li>Monitor for anomalous egress: unusual DNS queries, unexpected outbound connections</li>
+      <li>Baseline normal behavior, then look for deviations</li>
+      <li>File integrity monitoring on critical paths</li>
+      <li>Write incident response reports using NIST 800-61 framework</li>
+    </ul>
+    <aside class="notes">
+      Passive defense - waiting for something to turn red on the scoring dashboard - is a guaranteed losing strategy. The best teams operate under the
+      assumption that Red Team is already inside, because most of the time, they are.
+
+      Effective threat hunting means centralizing logs from every system into one place and looking for patterns. Massive outbound DNS queries from a
+      domain controller? That's probably a C2 channel. New scheduled task on a system nobody touched? That's persistence. Recently modified PHP files
+      in your web root? Webshell.
+
+      The huge thing teams miss: incident response reports can recover the points you lost from a breach. A well-written IR report with specific indicators
+      of compromise, timeline of the attack, and remediation steps taken can sometimes recover all the penalty points. Have templates ready.
+      The Threat Hunter finds the evidence, the Injects Lead formats the report.
+    </aside>
+  </section>
+  <section>
+    <h3>Automation Engineer</h3>
+    <ul>
+      <li>Deploy hardening playbooks in the first minutes - Ansible, PowerShell DSC</li>
+      <li>Version control your automation - Git</li>
+      <li><strong>Secure your automation infrastructure</strong> - if Red Team owns your Ansible server, they own everything</li>
+      <li>Use least-privilege service accounts for automation</li>
+      <li>Test your playbooks before competition day</li>
+    </ul>
+    <aside class="notes">
+      In the modern competition, manual configuration cannot keep pace with Red Team automation. You need config management deploying security baselines
+      across all your systems simultaneously.
+
+      But here's the risk that catches teams: Red Team actively hunts for your automation infrastructure. If they compromise your Ansible control node
+      or your PowerShell deployment server, they have the keys to your entire kingdom. They will use YOUR playbooks to deploy THEIR malware, alter firewall
+      rules, or lock you out of your own systems. Secure your automation servers with the strongest access controls you have, use key-based auth only,
+      and monitor them obsessively.
+    </aside>
+  </section>
+</section>
+
+<!-- ======== PHYSICAL SPACE ======== -->
+<section>
+  <h2>Physical Space</h2>
+  <ul>
+    <li>Go into blackout</li>
+    <li>No phones, no outside communication - violation means disqualification</li>
+    <li>Organize your physical workspace - monitor layout matters when you're stressed</li>
+    <li>Have printed copies of everything - playbooks, cheat sheets, password lists</li>
+    <li>Whiteboard for tracking service status and inject deadlines</li>
+  </ul>
+  <aside class="notes">
+    The communications blackout is absolute. No texting your mentor, no checking Discord, no outside help of any kind. Your coach cannot enter your
+    competition space or advise you during the event. Violations result in penalties or disqualification.
+
+    Physical organization is underrated. When you're 6 hours into a competition and running on caffeine and adrenaline, being able to glance at a
+    whiteboard to see service status and inject deadlines will save you from dropping critical balls.
+  </aside>
+</section>
+
+<!-- ======== INJECTS ======== -->
+<section>
+  <h2>Injects</h2>
+  <ul>
+    <li>Injects are IMPORTANT. Do not fail to turn in SOMETHING for them. Partial credit is way better than nothing.</li>
+    <li>They range from "add a user to AD" to "present a disaster recovery plan to the board"</li>
+    <li>Late submissions earn <strong>zero points</strong> regardless of quality</li>
+    <li>Professional formatting matters - use complete sentences, proper tone</li>
+  </ul>
+  <aside class="notes">
+    Injects are evaluated on technical accuracy, completeness, and professional formatting. The Orange Team judges want to see executive-quality
+    communication, not a brain dump of technical jargon. If the inject asks for a security policy, write it like you'd present it to a CEO, not
+    like a Reddit post.
+
+    Have templates pre-built for common inject types: acceptable use policies, disaster recovery plans, risk assessments, incident reports,
+    executive memos, and network diagrams. Customize them for the competition scenario and submit on time.
+  </aside>
+</section>
+
+<!-- ======== KNOW YOUR... ======== -->
+<section>
+  <h2>Know Your Network</h2>
+  <ul>
+    <li>Map everything in the first 10 minutes - what's running, what's scored, what shouldn't be there</li>
+    <li>Cross-reference against the team packet topology</li>
+    <li>Document IP addresses, services, and credentials as you discover/change them</li>
+    <li>Segment where possible - the flat network is Red Team's playground</li>
+  </ul>
+  <aside class="notes">
+    The team packet gives you a network topology. Verify it immediately. Run nmap against your own network and compare what's actually running versus
+    what should be. Anything unexpected is either a misconfiguration you need to fix or something Red Team planted before the clock started (in some formats).
+    Document everything on your whiteboard. This is your ground truth for the rest of the competition.
+  </aside>
+</section>
+
+<section>
+  <h2>Know Your Defenses</h2>
+  <ul>
+    <li>Layer your defenses - no single control stops everything</li>
+    <li>Perimeter: firewall egress filtering</li>
+    <li>Host: endpoint protection, sysctl hardening, GPOs</li>
+    <li>Application: WAF, input validation, secure configs</li>
+    <li>Data: encryption, access controls, backups of PII/PHI</li>
+    <li>Monitoring: centralized logging, alerting on anomalies</li>
+  </ul>
+  <aside class="notes">
+    Defense in depth isn't just a buzzword for CCDC. When Red Team bypasses your firewall (and they will eventually), your host-level controls need to
+    catch them. When they escalate privileges on a host, your network segmentation should limit lateral movement. When they reach your database, encryption
+    and access controls should slow the data exfiltration. Every layer they have to break through costs them time, and time is the one resource that's
+    truly limited in a competition.
+  </aside>
+</section>
+
+<section>
+  <h2>Know Your Enemy</h2>
+  <ul>
+    <li>Study Red Team writeups and debrief videos</li>
+    <li>Learn the tools: Metasploit, Cobalt Strike, Impacket, Sliver, Mythic</li>
+    <li>Understand common attack chains, not just individual techniques</li>
+    <li>MITRE ATT&amp;CK framework maps techniques to detections</li>
+    <li><strong>The best defenders have offensive skills</strong></li>
+  </ul>
+  <aside class="notes">
+    You don't need to become a penetration tester, but understanding how attacks chain together will make you a dramatically better defender.
+    A Red Teamer doesn't just "hack a box." They scan for open services, find a default credential, establish a foothold, escalate privileges,
+    move laterally to a higher-value target, and exfiltrate data. Each step in that chain is a detection and prevention opportunity.
+
+    Read Red Team competition writeups. Watch the debrief videos. The more you understand about how the other side operates, the better your defenses will be.
+  </aside>
+</section>
+
+<!-- ======== CLOUD ======== -->
+<section>
+  <h2>Cloud and Modern Infrastructure</h2>
+  <p>Some regions (especially Northeast) now deploy entirely on cloud infrastructure. Be ready for:</p>
+  <ul>
+    <li>AWS / Azure / GCP fundamentals</li>
+    <li>Terraform and Infrastructure as Code</li>
+    <li>Kubernetes cluster defense</li>
+    <li>IAM and identity-based security</li>
+    <li>Cloud-native logging (CloudTrail, CloudWatch)</li>
+  </ul>
+  <aside class="notes">
+    The Northeast region has pioneered cloud-native competition environments, deploying infrastructure dynamically on AWS using Terraform and Ansible.
+    Competitors face Kubernetes clusters secured by Falco, identity management via Teleport, and Palo Alto Networks firewalls. Other regions may focus
+    more on legacy on-premise environments or include OT/SCADA systems. The variance between regions is extreme, so teams with national ambitions
+    need to be comfortable with both legacy and cloud infrastructure.
+
+    The key cloud security fundamentals: least-privilege IAM policies, no long-lived access keys, enable CloudTrail logging everywhere, and understand
+    that cloud misconfigurations are the new default credentials.
+  </aside>
+</section>
+
+<!-- ======== REGIONAL NOTES ======== -->
+<section>
+  <section>
+    <h2>Regional Specific Notes</h2>
+    <img src="imgs/RegionalMap.png" style="max-height: 400px;">
+    <p class="small">↓ Scroll down for regions</p>
+  </section>
+  <section>
+    <h3>Pacific Rim Region</h3>
+    <ul>
+      <li>Washington, Idaho, Oregon</li>
+      <li>Single virtual qualifier in early February</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Western Region</h3>
+    <ul>
+      <li>Arizona, California, Nevada</li>
+      <li>Hosted primarily in Southern California</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Rocky Mountain Region</h3>
+    <ul>
+      <li>Colorado, Kansas, Nebraska, Utah</li>
+      <li>Denver-based finals, virtual qualifier narrowing the field to eight teams</li>
+    </ul>
+  </section>
+  <section>
+    <h3>At-Large Region</h3>
+    <ul>
+      <li>Variance region for geographically displaced or unaffiliated institutions</li>
+      <li>Single virtual qualifier in late February</li>
+    </ul>
+  </section>
+  <section>
+    <h3>North-East Region</h3>
+    <ul>
+      <li>New England states and New York</li>
+      <li>Pioneering cloud-native environments (AWS, Kubernetes, Terraform)</li>
+      <li>Virtual qualifier narrowing 24 teams to a 9-team regional final</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Mid-Atlantic Region</h3>
+    <ul>
+      <li>Delaware, DC, Maryland, New Jersey, North Carolina, Pennsylvania, Virginia, West Virginia</li>
+      <li>Scores are ordinal (1st in category get 1 point, 8th, 8)</li>
+      <li>Team Captains that go into CEO meetings with statistics like # of services online, # of injects completed, usually have better meetings</li>
+    </ul>
+  </section>
+  <section>
+    <h3>South-East Region</h3>
+    <ul>
+      <li>Alabama, Florida, Georgia, Mississippi, South Carolina, Tennessee</li>
+      <li>Single virtual qualifier in early February</li>
+    </ul>
+  </section>
+  <section>
+    <h3>South-West Region</h3>
+    <ul>
+      <li>Arkansas, Louisiana, New Mexico, Oklahoma, Texas</li>
+      <li>Single virtual qualifier in early February</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Mid-West Region</h3>
+    <ul>
+      <li>Illinois, Indiana, Iowa, Kentucky, Michigan, Minnesota, Missouri, Ohio, Wisconsin</li>
+      <li>Most complex qualification: state-by-state qualifiers, then a regional wildcard round</li>
+      <li>The gauntlet ensures only the most battle-tested teams emerge</li>
+    </ul>
+  </section>
+</section>
+
+<!-- ======== WILDCARD ======== -->
+<section>
+  <h2>The Wildcard</h2>
+  <p>Second-place teams from all nine regions compete in a sudden-death Wildcard event. The winner gets the 10th and final slot at Nationals.</p>
+  <aside class="notes">
+    The Wildcard is one of the most intense events in CCDC. Nine second-place teams, one shot, winner take all. If you come in second at your regional,
+    your season isn't over. Prepare for Wildcard like it's a completely separate competition.
+
+    The Midwest region has its own internal wildcard system due to its massive participant volume. State qualifier champions advance to the regional,
+    while second and third place teams battle in a Midwest-specific wildcard for the remaining regional slots.
+  </aside>
+</section>
+
+<!-- ======== RED TEAM DEBRIEFS ======== -->
+<section>
+  <h2>Red Team Debriefs</h2>
+  <ul>
+    <li>2025 Nationals: <a href="https://www.sshell.co/red-teaming-at-national-ccdc-2025/">sshell blog</a></li>
+    <li>2017 Nationals: <a href="https://www.youtube.com/watch?v=2vfjqR2amPs">YouTube</a></li>
+    <li>2014 Nationals: <a href="https://www.youtube.com/watch?v=75TTFmS_7uQ">YouTube</a></li>
+    <li>2015 SWCCDC: <a href="https://www.youtube.com/watch?v=23PmARz25WU">YouTube</a></li>
+    <li>2009 MACCDC: <a href="https://www.youtube.com/watch?v=8bhFBJO-Wjg">YouTube</a></li>
+  </ul>
+  <aside class="notes">
+    Watch these. Seriously. Understanding how Red Team operates is the single best thing you can do to improve your defense.
+    These debriefs explain exactly what worked, what didn't, and why.
+  </aside>
+</section>
+
+<!-- ======== QUESTIONS ======== -->
+<section>
+  <h2>Questions?</h2>
+  <ul>
+    <li>Rob Fuller</li>
+    <li>Twitter/X: <a href="https://x.com/mubix">@mubix</a></li>
+    <li><a href="https://malicious.link/">https://malicious.link/</a></li>
+  </ul>
+  <aside class="notes">
+    Special thanks to Devon, Joseph, Marco, Aaron, Raymond, and Brian for the 1 AM jam session to get these slides together. Go social media.
+    Alex Herrick for GPOs and other suggestions.
+    Craig Balding for the beautiful 'iptstate' command.
+    And to every Blue Team that's ever competed - you're building skills that matter far beyond the competition.
+  </aside>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    slideNumber: true,
+    transition: 'convex',
+    history: true,
+    previewLinks: false
+  });
+</script>
+</body>
+</html>

@@ -14,41 +14,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-
-      - name: Install asciidoctor-revealjs
-        run: gem install asciidoctor-revealjs --version '~> 5.0'
-
-      - name: Build site
-        run: |
-          mkdir -p ./build/
-          cp CNAME ./build/
-          cp -r imgs ./build/
-
-          # Download reveal.js 4.x (compatible with asciidoctor-revealjs 5.x)
-          REVEALJS_VERSION=4.6.1
-          curl -sL "https://github.com/hakimel/reveal.js/archive/refs/tags/${REVEALJS_VERSION}.tar.gz" | tar xz
-          mv "reveal.js-${REVEALJS_VERSION}" ./build/revealjs
-
-          asciidoctor-revealjs -o ./build/index.html index.adoc
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./build
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
       - id: deployment
         uses: actions/deploy-pages@v4
