@@ -8,9 +8,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
   <style>
+    .reveal { font-size: 32px; }
     .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
-    .reveal ul { text-align: left; }
-    .reveal ol { text-align: left; }
+    .reveal h2 { font-size: 1.4em; }
+    .reveal h3 { font-size: 1.1em; }
+    .reveal ul, .reveal ol { text-align: left; display: block; }
+    .reveal li { margin-bottom: 0.3em; line-height: 1.3; }
     .reveal .small { font-size: 0.7em; }
     .reveal strong { color: #e7ad52; }
     .reveal section img { border: none; box-shadow: none; background: none; }
@@ -233,13 +236,18 @@
     </aside>
   </section>
   <section>
-    <h3>What Red Team Actually Targets</h3>
+    <h3>What Red Team Actually Targets (1/2)</h3>
     <p>In order of what we try first:</p>
     <ol>
       <li><strong>Default and weak credentials</strong> - always, every time, first thing</li>
       <li><strong>Unnecessary services</strong> - if it's running and you don't need it, we'll use it</li>
       <li><strong>Egress to our C2 servers</strong> - reverse shells, DNS tunnels, HTTP callbacks</li>
       <li><strong>Your automation infrastructure</strong> - if we own your Ansible server, we own everything</li>
+    </ol>
+  </section>
+  <section>
+    <h3>What Red Team Actually Targets (2/2)</h3>
+    <ol start="5">
       <li><strong>Lateral movement via AD</strong> - Kerberoasting, Pass-the-Hash, GPO abuse</li>
       <li><strong>Web application backdoors</strong> - webshells dropped in your scored web apps</li>
       <li><strong>Data exfiltration</strong> - PII/PHI from databases for maximum point damage</li>
@@ -416,10 +424,10 @@
     <ul>
       <li>Move or disable SSH if it isn't scored</li>
       <li>Automate hardening with Ansible playbooks</li>
-      <li>sysctl hardening: disable ICMP redirects, restrict kernel pointers, disable IPv6 if not needed</li>
+      <li>sysctl hardening: disable ICMP redirects, restrict kernel pointers</li>
       <li>SELinux/AppArmor - enforce it, don't disable it</li>
-      <li>Fail2Ban on anything accepting authentication</li>
-      <li>Know systemd inside and out - that's where persistence hides</li>
+      <li>Fail2Ban on anything accepting auth</li>
+      <li>Know systemd - that's where persistence hides</li>
     </ul>
     <aside class="notes">
       Red Team persistence on Linux commonly lives in cron jobs, systemd unit files, .bashrc modifications, authorized_keys additions, and SUID binaries.
@@ -471,12 +479,12 @@
   <section>
     <h3>Threat Hunter / Incident Responder</h3>
     <ul>
-      <li>Assume the perimeter is already breached - hunt from minute one</li>
-      <li>Centralize logs: Splunk, Graylog, or ELK stack</li>
-      <li>Monitor for anomalous egress: unusual DNS queries, unexpected outbound connections</li>
-      <li>Baseline normal behavior, then look for deviations</li>
+      <li>Assume you're already breached - hunt from minute one</li>
+      <li>Centralize logs: Splunk, Graylog, or ELK</li>
+      <li>Monitor for anomalous egress: odd DNS queries, unexpected outbound connections</li>
+      <li>Baseline normal behavior, alert on deviations</li>
       <li>File integrity monitoring on critical paths</li>
-      <li>Write incident response reports using NIST 800-61 framework</li>
+      <li>IR reports using NIST 800-61 framework</li>
     </ul>
     <aside class="notes">
       Passive defense - waiting for something to turn red on the scoring dashboard - is a guaranteed losing strategy. The best teams operate under the
@@ -516,11 +524,11 @@
 <section>
   <h2>Physical Space</h2>
   <ul>
-    <li>Go into blackout</li>
-    <li>No phones, no outside communication - violation means disqualification</li>
-    <li>Organize your physical workspace - monitor layout matters when you're stressed</li>
-    <li>Have printed copies of everything - playbooks, cheat sheets, password lists</li>
-    <li>Whiteboard for tracking service status and inject deadlines</li>
+    <li>Go into blackout - no phones, no outside communication</li>
+    <li>Violation means disqualification</li>
+    <li>Organize your workspace - monitor layout matters under stress</li>
+    <li>Printed playbooks, cheat sheets, and password lists</li>
+    <li>Whiteboard for service status and inject deadlines</li>
   </ul>
   <aside class="notes">
     The communications blackout is absolute. No texting your mentor, no checking Discord, no outside help of any kind. Your coach cannot enter your
@@ -568,13 +576,13 @@
 
 <section>
   <h2>Know Your Defenses</h2>
+  <p>Layer your defenses - no single control stops everything</p>
   <ul>
-    <li>Layer your defenses - no single control stops everything</li>
-    <li>Perimeter: firewall egress filtering</li>
-    <li>Host: endpoint protection, sysctl hardening, GPOs</li>
-    <li>Application: WAF, input validation, secure configs</li>
-    <li>Data: encryption, access controls, backups of PII/PHI</li>
-    <li>Monitoring: centralized logging, alerting on anomalies</li>
+    <li><strong>Perimeter:</strong> firewall egress filtering</li>
+    <li><strong>Host:</strong> endpoint protection, sysctl hardening, GPOs</li>
+    <li><strong>Application:</strong> WAF, input validation, secure configs</li>
+    <li><strong>Data:</strong> encryption, access controls, backups of PII/PHI</li>
+    <li><strong>Monitoring:</strong> centralized logging, alerting on anomalies</li>
   </ul>
   <aside class="notes">
     Defense in depth isn't just a buzzword for CCDC. When Red Team bypasses your firewall (and they will eventually), your host-level controls need to
