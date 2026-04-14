@@ -33,8 +33,13 @@ Examples: `2026-NECCDC-Qualifiers-TeamPacket.pdf`, `2019-WRCCDC-Finals-TeamPacke
 White papers go in `documents/_WhitePapers/` using the format `Author-ShortTitle.pdf`.
 
 ### Team Packet Coverage
+| Competition Round            | Packet availability         |
+|------------------------------|------------------------------|
+| Q = Qualifiers               | ✅ = complete               |
+| F = Finals/Regional          | ⚠️ = incomplete             |
+| W = Wildcard                 | ❌ = missing (PRs welcome!) |
 
-Q = Qualifiers | F = Finals/Regional | W = Wildcard — click icon to download. ✅ = complete. ⚠️ = incomplete. ❌ = missing (PRs welcome!)
+(click icon to download)
 
 | Year | Nationals | AL | MA | MW | NE | PR | RM | SE | SW | WR |
 |------|------|------|------|------|------|------|------|------|------|------|
