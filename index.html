@@ -236,6 +236,27 @@
     </aside>
   </section>
   <section>
+    <h3>Red Team Has Rules Too</h3>
+    <ul>
+      <li><strong>No insults or degradation</strong> - Red Team cannot vandalize sites with taunts or call out individuals</li>
+      <li><strong>No student contact</strong> - Red Teamers cannot respond if you find their handle in their malware</li>
+      <li><strong>No nuking infrastructure</strong> - no hypervisor-killing ransomware, no network DoS</li>
+      <li><strong>Destructive payloads are end-of-comp only</strong> - and only on command, never on a timer</li>
+    </ul>
+    <p class="small" style="text-align: right; opacity: 0.5; margin-top: 1em;">h/t <a href="https://github.com/securesean">securesean</a></p>
+    <aside class="notes">
+      Red Team operates under strict rules. This matters because knowing the adversary's constraints helps you prioritize.
+      First, respect is paramount. Every person at CCDC is volunteering their time on top of their normal responsibilities. Red Teamers who insult or denigrate students
+      are permanently removed. No vandalizing banners or websites with messages like "BLUE TEAMS SUCK", no obscenities, no calling out individuals by name.
+      Second, there's a strict no-contact rule. If a student discovers a Red Teamer's twitter handle embedded in their malware and sends them a DM, the Red Teamer
+      reports it immediately rather than responding. This goes both ways - Blue Teamers shouldn't try to contact Red Team during competition hours either.
+      Third, Red Team has to be mindful of shared infrastructure. If you're competing in a virtualized environment, Red Team can't execute ransomware that locks up
+      hypervisor hard drives or run network-based denial of service attacks, especially on shared bandwidth. If your hypervisor is dead, you probably did it to yourself.
+      Finally, destructive malware like ransomware, boot sector overwrites, or nyan cat only gets deployed at the very end of competition and only when given the explicit order.
+      It's never planted as a scheduled task or cron job because that has gone off accidentally too many times. So if you see ransomware in the first few hours, something else is going on.
+    </aside>
+  </section>
+  <section>
     <h3>What Red Team Actually Targets (1/2)</h3>
     <p>In order of what we try first:</p>
     <ol>
